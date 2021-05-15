@@ -15,7 +15,7 @@ export default function App() {
     setError(null);
     try {
       const response = await fetch(
-        `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDBAPI_KEY}&s=${searchTerm}`
+        `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDBAPI_KEY}&s=${searchTerm}`
       );
       if (!response.ok) throw new Error("Something went wrong.");
 
