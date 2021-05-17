@@ -5,7 +5,7 @@ export default function Search({ onSearchChange }) {
     <input
       type="search"
       onChange={onSearchChange}
-      placeholder="search for movies"
+      placeholder="Search for movies"
     />
   );
 }
