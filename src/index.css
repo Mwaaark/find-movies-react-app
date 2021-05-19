@@ -35,9 +35,15 @@ section {
 
 .container {
   margin-inline: auto;
-  width: min(90%, 40rem);
+  width: min(90%, 70.5rem);
 }
 
 .margin-top {
   margin-top: 0.5rem;
+}
+
+@media (min-width: 40em) {
+  section {
+    padding: 7rem 0;
+  }
 }

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
+import MovieDetail from "../components/Movies/MovieDetail";
 
 export default function Movie() {
   const { movieId } = useParams();
@@ -37,33 +38,16 @@ export default function Movie() {
   }
 
   if (movie) {
-    content = (
-      <div>
-        <div>
-          <img src={movie.Poster} alt={movie.Title} />
-        </div>
-        <div>
-          <h2>
-            {movie.Title} ({movie.Year})
-          </h2>
-          <div>
-            <div>{movie.Rated}</div>
-            <div>&#9733; {movie.imdbRating}</div>
-            <div>{movie.Runtime}</div>
-          </div>
-          <p>{movie.Plot}</p>
-          <p>Genre: {movie.Genre}</p>
-          <p>Release: {movie.Released}</p>
-          <p>Director: {movie.Director}</p>
-          <p>Cast: {movie.Actors}</p>
-        </div>
-      </div>
-    );
+    content = <MovieDetail movie={movie} />;
   }
 
   if (error) {
     content = <p>{error}</p>;
   }
 
-  return <div>{content}</div>;
+  return (
+    <section>
+      <div className="container">{content}</div>
+    </section>
+  );
 }
