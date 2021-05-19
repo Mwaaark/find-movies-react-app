@@ -38,7 +38,7 @@ export default function Movie() {
 
   if (movie) {
     content = (
-      <div className="d-md-flex gap-5">
+      <div>
         <div>
           <img src={movie.Poster} alt={movie.Title} />
         </div>
@@ -46,7 +46,7 @@ export default function Movie() {
           <h2>
             {movie.Title} ({movie.Year})
           </h2>
-          <div className="d-flex gap-3">
+          <div>
             <div>{movie.Rated}</div>
             <div>&#9733; {movie.imdbRating}</div>
             <div>{movie.Runtime}</div>

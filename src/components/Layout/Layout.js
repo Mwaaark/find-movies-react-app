@@ -1,11 +1,15 @@
 import React from "react";
-import Header from "./Header";
+import MainHeader from "./MainHeader";
+import Footer from "./Footer";
+
+import classes from "./Layout.module.css";
 
 export default function Layout({ children }) {
   return (
-    <>
-      <Header />
-      <main className="container mt-5">{children}</main>
-    </>
+    <div className={classes.wrapper}>
+      <MainHeader />
+      <main role="main">{children}</main>
+      <Footer />
+    </div>
   );
 }

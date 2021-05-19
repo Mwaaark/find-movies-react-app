@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
-import { Image, ListGroup } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import SearchMovieList from "../components/Movies/SearchMovieList";
+import Search from "../components/UI/Search";
 
-export default function Movies() {
+export default function Homepage() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -52,46 +52,27 @@ export default function Movies() {
   let content;
 
   if (movies.length > 0) {
-    content = (
-      <ListGroup>
-        {movies.map((movie) => (
-          <Link
-            to={`/movies/${movie.id}`}
-            key={movie.id}
-            style={{ textDecoration: "none" }}
-          >
-            <ListGroup.Item action variant="light">
-              <div className="d-flex align-items-center">
-                <Image src={movie.image} style={{ width: "30px" }} />
-                <p style={{ paddingLeft: "10px" }}>
-                  {movie.title} <span>({movie.year})</span>
-                </p>
-              </div>
-            </ListGroup.Item>
-          </Link>
-        ))}
-      </ListGroup>
-    );
+    content = <SearchMovieList items={movies} />;
   }
 
   if (error) {
-    content = <p>{error}</p>;
+    content = <p className="margin-top">{error}</p>;
   }
 
   if (isLoading) {
-    content = <p>Loading...</p>;
+    content = <p className="margin-top">Loading...</p>;
   }
-  return (
-    <>
-      <input
-        className="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-        onChange={searchChangeHandler}
-      ></input>
 
-      {content}
-    </>
+  return (
+    <section>
+      <div className="container">
+        <Search
+          onSearchChange={searchChangeHandler}
+          placeholder="Search for movies"
+        />
+
+        {content}
+      </div>
+    </section>
   );
 }

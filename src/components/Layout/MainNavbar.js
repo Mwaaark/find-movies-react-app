@@ -1,18 +1,31 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
+
+import classes from "./MainNavbar.module.css";
 
 export default function MainNavbar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" className="px-3">
-      <Navbar.Brand href="/movies">Find Movies</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="/movies">Home</Nav.Link>
-          <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="/contact">Contact</Nav.Link>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <>
+      <div className={classes.logo}>Find Movies</div>
+      <nav className={classes.nav}>
+        <ul>
+          <li>
+            <NavLink to="/movies" activeClassName={classes.active}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/about" activeClassName={classes.active}>
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" activeClassName={classes.active}>
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 }

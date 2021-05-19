@@ -1,7 +1,7 @@
 import { Redirect, Route, Switch } from "react-router";
 import Layout from "./components/Layout/Layout";
 
-import Movies from "./pages/Movies";
+import Homepage from "./pages/Homepage";
 import Movie from "./pages/Movie";
 import NotFound from "./pages/NotFound";
 
@@ -13,7 +13,7 @@ export default function App() {
           <Redirect to="/movies" />
         </Route>
         <Route path="/movies" exact>
-          <Movies />
+          <Homepage />
         </Route>
         <Route path="/movies/:movieId" exact>
           <Movie />
