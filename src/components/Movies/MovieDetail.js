@@ -1,4 +1,5 @@
 import React from "react";
+import { FaStar, FaClock } from "react-icons/fa";
 import classes from "./MovieDetail.module.css";
 
 export default function MovieDetail(props) {
@@ -11,15 +12,17 @@ export default function MovieDetail(props) {
         <h2>
           {movie.Title} ({movie.Year})
         </h2>
-        <div className={classes.sub_info}>
-          <div>{movie.Rated}</div>
+        <div className={classes.info}>
+          <div className={classes.rated}>{movie.Rated}</div>
           <div>
-            <span>&#9733;</span> {movie.imdbRating} rating
+            <FaStar /> {movie.imdbRating} rating
           </div>
-          <div>{movie.Runtime}</div>
+          <div>
+            <FaClock /> {movie.Runtime}
+          </div>
         </div>
         <p className={classes.plot}>{movie.Plot}</p>
-        <div className={classes.info}>
+        <div className={classes.sub_info}>
           <p>
             Genre: <span>{movie.Genre}</span>
           </p>

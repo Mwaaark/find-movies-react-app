@@ -16,14 +16,22 @@
   color: #ffffff;
 }
 
-.sub_info {
+.info {
   display: flex;
   align-items: center;
   color: #fca311;
 }
 
-.sub_info > * + * {
+.info > * + * {
   margin-left: 1rem;
+}
+
+.info .rated {
+  background-color: #fca311;
+  color: #020916;
+  padding: 0.25em 0.5em;
+  border-radius: 2em;
+  font-weight: 700;
 }
 
 .movie_detail .plot {
@@ -32,12 +40,12 @@
   line-height: 1.5;
 }
 
-.info {
+.sub_info {
   color: #ffffff;
   font-weight: 700;
 }
 
-.info span {
+.sub_info span {
   color: #e5e5e5cc;
   font-weight: 400;
   margin-left: 0.5em;
