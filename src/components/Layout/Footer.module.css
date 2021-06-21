@@ -1,14 +1,6 @@
 .footer {
   margin-top: auto;
-  background-color: #34495e;
-  padding: 1rem 0;
-  color: white;
-}
-
-.footer div {
+  background-color: #0f1622;
+  padding-block: 1rem;
   text-align: center;
-}
-
-.footer span {
-  font-size: 1rem;
 }

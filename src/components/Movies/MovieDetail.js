@@ -6,16 +6,16 @@ export default function MovieDetail(props) {
 
   return (
     <div className={classes.movie_detail}>
-      <div>
-        <img src={movie.Poster} alt={movie.Title} />
-      </div>
+      <img src={movie.Poster} alt={movie.Title} />
       <div>
         <h2>
           {movie.Title} ({movie.Year})
         </h2>
         <div className={classes.sub_info}>
           <div>{movie.Rated}</div>
-          <div>{movie.imdbRating} rating</div>
+          <div>
+            <span>&#9733;</span> {movie.imdbRating} rating
+          </div>
           <div>{movie.Runtime}</div>
         </div>
         <p className={classes.plot}>{movie.Plot}</p>

@@ -56,11 +56,11 @@ export default function Homepage() {
   }
 
   if (error) {
-    content = <p className="margin-top">{error}</p>;
+    content = <p className="text-secondary">{error}</p>;
   }
 
   if (isLoading) {
-    content = <p className="margin-top">Loading...</p>;
+    content = <p className="text-secondary">Loading...</p>;
   }
 
   return (

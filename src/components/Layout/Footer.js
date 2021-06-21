@@ -4,9 +4,9 @@ import classes from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className={classes.footer}>
-      <div>
-        <span>&copy; Find Movies 2021</span>
+    <footer className={`${classes.footer} text-yellow`}>
+      <div className="container">
+        <p>Copyright &copy; 2021 FindMovies. All Rights Reserved </p>
       </div>
     </footer>
   );
